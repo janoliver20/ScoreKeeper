@@ -25,7 +25,6 @@ export class GameStartComponent implements OnInit {
     }
     else {
       const newGame: GameStart = {sport: this.sport, namePlayerA: this.playerA, namePlayerB: this.playerB};
-      alert(JSON.stringify(newGame));
       this.awsService.sendCall(this.url, JSON.stringify(newGame));
     }
   }
