@@ -1,0 +1,32 @@
+<h3>Start a new Game</h3>
+
+<div class="grid mat-elevation-z8">
+    <div class="input-div">
+      <mat-form-field class="game-input-field">
+        <mat-label>Sport</mat-label>
+        <input matInput type="text" [(ngModel)]="sport">
+        <button mat-button *ngIf="sport" matSuffix mat-icon-button aria-label="Clear" (click)="sport=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <br>
+    <mat-form-field class="game-input-field">
+      <mat-label>Player A</mat-label>
+      <input matInput type="text" [(ngModel)]="playerA">
+      <button mat-button *ngIf="playerA" matSuffix mat-icon-button aria-label="Clear" (click)="playerA=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <br>
+      <mat-form-field class="game-input-field">
+        <mat-label>Player B</mat-label>
+        <input matInput type="text" [(ngModel)]="playerB">
+        <button mat-button *ngIf="playerB" matSuffix mat-icon-button aria-label="Clear" (click)="playerB=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    <br>
+
+      <button mat-raised-button color="primary" (click)="start()">Go</button>
+  </div>
+</div>
