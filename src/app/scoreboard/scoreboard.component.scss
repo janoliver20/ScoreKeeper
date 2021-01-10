@@ -1,0 +1,19 @@
+h3 {
+  text-align: center;
+  margin: 5px;
+}
+
+.grid {
+  width: 80%;
+  margin: auto;
+}
+
+.mat-elevation-z8 {
+  width: 100%;
+}
+
+@media (max-width: 700px) {
+  .grid {
+    width: 100%;
+  }
+}
