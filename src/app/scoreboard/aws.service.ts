@@ -13,4 +13,8 @@ export class AwsService {
   public makeCall(url: string): Observable<RawScore> {
     return this.httpClient.get<RawScore>(url);
   }
+
+  public sendCall(url: string, body: any): void {
+    this.httpClient.post(url, body);
+  }
 }

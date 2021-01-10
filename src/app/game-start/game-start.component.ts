@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {GameStart} from './GameStart';
+import {AwsService} from '../scoreboard/aws.service';
+import {ScoreboardComponent} from '../scoreboard/scoreboard.component';
 
 @Component({
   selector: 'app-game-start',
@@ -10,8 +12,9 @@ export class GameStartComponent implements OnInit {
   playerA = '';
   playerB = '';
   sport = '';
+  private url = 'http://94ma30yfwg.execute-api.eu-central-1.amazonaws.com/Prod/publish';
 
-  constructor() { }
+  constructor(private awsService: AwsService) { }
 
   ngOnInit(): void {
   }
@@ -21,7 +24,9 @@ export class GameStartComponent implements OnInit {
       alert('Please enter a value in all inputs');
     }
     else {
-      let newGame: GameStart = {sport: this.sport, namePlayerA: this.playerA, namePlayerB: this.playerB};
+      const newGame: GameStart = {sport: this.sport, namePlayerA: this.playerA, namePlayerB: this.playerB};
+      alert(JSON.stringify(newGame));
+      this.awsService.sendCall(this.url, JSON.stringify(newGame));
     }
   }
 
