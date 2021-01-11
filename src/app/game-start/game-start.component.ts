@@ -24,8 +24,8 @@ export class GameStartComponent implements OnInit {
       alert('Please enter a value in all inputs');
     }
     else {
-      const newGame: GameStart = {sport: this.sport, namePlayerA: this.playerA, namePlayerB: this.playerB};
-      this.awsService.sendCall(this.url, JSON.stringify(newGame));
+      const newGame = {sport: this.sport, namePlayerA: this.playerA, namePlayerB: this.playerB};
+      this.awsService.sendCall(this.url, newGame);
     }
   }
 
