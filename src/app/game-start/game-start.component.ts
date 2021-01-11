@@ -12,7 +12,7 @@ export class GameStartComponent implements OnInit {
   playerA = '';
   playerB = '';
   sport = '';
-  private url = 'http://94ma30yfwg.execute-api.eu-central-1.amazonaws.com/Prod/publish';
+  private url = 'https://94ma30yfwg.execute-api.eu-central-1.amazonaws.com/Prod/publish';
 
   constructor(private awsService: AwsService) { }
 
