@@ -4,10 +4,15 @@
     <div class="input-div">
       <mat-form-field class="game-input-field">
         <mat-label>Sport</mat-label>
-        <input matInput type="text" [(ngModel)]="sport">
+        <!--<input matInput type="text" [(ngModel)]="sport">
         <button mat-button *ngIf="sport" matSuffix mat-icon-button aria-label="Clear" (click)="sport=''">
           <mat-icon>close</mat-icon>
-        </button>
+        </button>-->
+        <mat-select [(ngModel)]="sport" name="sport">
+          <mat-option *ngFor="let sport of sports" [value]="sport">
+            {{sport}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
       <br>
     <mat-form-field class="game-input-field">

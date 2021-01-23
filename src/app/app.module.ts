@@ -21,6 +21,7 @@ import { GameStartComponent } from './game-start/game-start.component';
 import {FormsModule} from '@angular/forms';
 
 import * as AWS from 'aws-sdk';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -30,21 +31,22 @@ import * as AWS from 'aws-sdk';
     NavBarComponent,
     GameStartComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatMenuModule,
-    MatButtonModule,
-    MatCardModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MatListModule,
-    MatTableModule,
-    MatInputModule,
-    FormsModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatMenuModule,
+        MatButtonModule,
+        MatCardModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        MatListModule,
+        MatTableModule,
+        MatInputModule,
+        FormsModule,
+        MatSelectModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -12,7 +12,7 @@ export class ScoreboardComponent implements OnInit {
   // public response: Scores;
   public scoreboard: Score[];
   private API_URL = 'https://94ma30yfwg.execute-api.eu-central-1.amazonaws.com/Prod/';
-  displayedColumns: string[] = ['sport', 'playerA', 'playerB', 'score'];
+  displayedColumns: string[] = ['sport', 'playerA', 'playerB', 'score', 'temperature'];
   constructor(private awsService: AwsService) { }
 
   ngOnInit(): void {
@@ -23,6 +23,7 @@ export class ScoreboardComponent implements OnInit {
     const url = this.API_URL + 'scores';
     this.awsService.makeCall(url).subscribe(
       data => {
+        console.log(data);
         const localScores: Score[] = [];
         for (let i = 0; i < data.Count; i++) {
           const payload = data.Items[i].payload.replace(/\r?\n|\r/g, '').replace(/\\/g, '');

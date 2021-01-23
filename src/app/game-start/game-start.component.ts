@@ -12,7 +12,11 @@ export class GameStartComponent implements OnInit {
   playerA = '';
   playerB = '';
   sport = '';
+
+  sports =  ['Tabletennis', 'Tennis'];
+
   private url = 'https://94ma30yfwg.execute-api.eu-central-1.amazonaws.com/Prod/publish';
+
 
   constructor(private awsService: AwsService) { }
 
