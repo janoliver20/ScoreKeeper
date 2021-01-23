@@ -16,12 +16,12 @@ export class AwsService {
 
   public sendCall(url: string, body: any): void {
     const config = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
-    alert(JSON.stringify(body));
+    console.log(JSON.stringify(body));
     this.httpClient.post<any>(url, body, config).subscribe(
       data => {
-        alert('Data: ' + JSON.stringify(data));
+        console.log('Data: ' + JSON.stringify(data));
       },
-      error => alert('Error: ' + JSON.stringify(error))
+      error => console.log('Error: ' + JSON.stringify(error))
     );
   }
 }

@@ -13,12 +13,23 @@ h3 {
   text-align: center;
 }
 
+.start-game {
+  width: 50%;
+  height: 50%;
+  padding: 10px;
+}
+
 .mat-elevation-z8 {
+  width: fit-content;
+  padding: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 .input-div {
-  width: 100%;
-  height: 100%;
+  align-items: center;
+  align-self: center;
+  align-content: center;
   padding: 10px;
 }
 

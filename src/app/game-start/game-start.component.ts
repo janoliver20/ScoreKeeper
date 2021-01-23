@@ -13,7 +13,7 @@ export class GameStartComponent implements OnInit {
   playerB = '';
   sport = '';
 
-  sports =  ['Tabletennis', 'Tennis'];
+  sports =  ['Tischtennis', 'Volleyball'];
 
   private url = 'https://94ma30yfwg.execute-api.eu-central-1.amazonaws.com/Prod/publish';
 
@@ -25,11 +25,12 @@ export class GameStartComponent implements OnInit {
 
   public start(): void {
     if (this.playerA === '' || this.playerB === '' || this.sport === '') {
-      alert('Please enter a value in all inputs');
+      alert('Bitte füllen Sie alle Felder aus');
     }
     else {
       const newGame = {sport: this.sport, namePlayerA: this.playerA, namePlayerB: this.playerB};
       this.awsService.sendCall(this.url, newGame);
+      alert('Spiel gestartet!');
     }
   }
 
