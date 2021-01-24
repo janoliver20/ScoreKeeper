@@ -12,7 +12,7 @@ export class ScoreboardComponent implements OnInit {
   // public response: Scores;
   public scoreboard: Score[];
   private API_URL = 'https://94ma30yfwg.execute-api.eu-central-1.amazonaws.com/Prod/';
-  displayedColumns: string[] = ['sport', 'playerA', 'playerB', 'score', 'temperature'];
+  displayedColumns: string[] = ['sport', 'playerA', 'playerB', 'score', 'temp', 'time'];
   constructor(private awsService: AwsService) { }
 
   ngOnInit(): void {
@@ -30,6 +30,7 @@ export class ScoreboardComponent implements OnInit {
           const score: Score = JSON.parse(payload);
           localScores.push(score);
         }
+        localScores.sort((a, b) => (a.time > b.time) ? -1 : 1);
         this.scoreboard = localScores;
       },
       error => console.log(error)

@@ -3,7 +3,7 @@ export interface Score {
   PlayerB: Player;
   sport: string;
   time: number;
-  temperature: number;
+  temp: number;
 }
 
 export interface Player {

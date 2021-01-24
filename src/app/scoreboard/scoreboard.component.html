@@ -23,13 +23,19 @@
       <td mat-cell *matCellDef="let score">{{score.PlayerA.sets}} : {{score.PlayerB.sets}}</td>
     </ng-container>
 
-    <ng-container matColumnDef="temperature">
+    <ng-container matColumnDef="temp">
       <th mat-header-cell *matHeaderCellDef>Temperature</th>
       <td mat-cell *matCellDef="let score">
-        <span *ngIf="score.temperature !== undefined">{{score.temperature.toFixed(1)}}°C</span>
+        <span *ngIf="score.temp !== undefined">{{score.temp.toFixed(1)}} °C</span>
       </td>
     </ng-container>
 
+    <ng-container matColumnDef="time">
+      <th mat-header-cell *matHeaderCellDef>Date</th>
+      <td mat-cell *matCellDef="let score">
+        <span *ngIf="score.time !== undefined">{{score.time * 1000 | date: 'dd/MM/yyyy'}}</span>
+      </td>
+    </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
